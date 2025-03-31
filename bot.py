@@ -3,8 +3,8 @@ import re
 import telebot
 from telebot.types import ReplyKeyboardMarkup, KeyboardButton
 
-# TOKEN = '8123973060:AAFKQ9HFsRiCAHBz4eSDzxHBUEqYcMu0klw'
-TOKEN = '5244750152:AAHu4dBlmFQZ-lylmMIeTyl-m-Tp3RD_u9E'
+TOKEN = '8123973060:AAFKQ9HFsRiCAHBz4eSDzxHBUEqYcMu0klw'
+# TOKEN = '5244750152:AAHu4dBlmFQZ-lylmMIeTyl-m-Tp3RD_u9E'
 bot_username = "freaky1488_bot"
 bot = telebot.TeleBot(TOKEN, parse_mode=None)
 last_10_messages = []
@@ -17,12 +17,12 @@ def send_welcome(message):
 
 @bot.message_handler()
 def text_handler(message):
-    print(message.text)
+    # print(message.text)
     global last_10_messages
     chat_id = message.chat.id
 
-    if message.chat.type == 'group':
-        print([msgg.from_user.id for msgg in last_10_messages])
+    if message.chat.type == 'supergroup' or message.chat.type == 'group':
+        # print([msgg.from_user.id for msgg in last_10_messages])
         if len(last_10_messages) < 10:
             last_10_messages.append(message)
         elif len(last_10_messages) == 10:

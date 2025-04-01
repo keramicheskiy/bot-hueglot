@@ -11,6 +11,7 @@ services:
   bot:
     build:
       context: .
+    restart: on-failure
 #      restart: always
 #      environment:
 #        - TELEGRAM_TOKEN=8123973060:AAFKQ9HFsRiCAHBz4eSDzxHBUEqYcMu0klw

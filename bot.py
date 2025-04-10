@@ -4,8 +4,8 @@ import re
 import telebot
 from telebot.types import ReplyKeyboardMarkup, KeyboardButton, ReactionTypeEmoji
 
-# TOKEN = '8123973060:AAFKQ9HFsRiCAHBz4eSDzxHBUEqYcMu0klw'
-TOKEN = '5244750152:AAHu4dBlmFQZ-lylmMIeTyl-m-Tp3RD_u9E'
+TOKEN = '8123973060:AAFKQ9HFsRiCAHBz4eSDzxHBUEqYcMu0klw'
+# TOKEN = '5244750152:AAHu4dBlmFQZ-lylmMIeTyl-m-Tp3RD_u9E'
 bot_username = "freaky1488_bot"
 bot = telebot.TeleBot(TOKEN, parse_mode=None)
 last_10_messages = []
@@ -89,8 +89,8 @@ def text_handler(message):
         random_message = random.randint(1, 15)
         if random_hate == 1:
             user = bot.get_chat_member(chat_id, message.from_user.id).user
-            bot.reply_to(message,
-                         f"{user.first_name}{" " + user.last_name if user.last_name is not None else ""} высказался")
+            bot.reply_to(message, f"{user.first_name}{' ' + user.last_name if user.last_name is not None else ''} высказался"
+)
             bot.set_message_reaction(chat_id=chat_id, message_id=message.id, reaction=[ReactionTypeEmoji('👎')],
                                      is_big=False)
         if random_reaction == 1:

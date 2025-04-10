@@ -23,7 +23,9 @@ def send_welcome(message):
 @bot.message_handler(content_types=['voice'])
 def audio_reply(message):
     bot.reply_to(message, "Не могу сейчас слушать, текстом напиши")
-    bot.send_audio(admin_id, message.voice)
+    # bot.send_audio(admin_id, message.voice)
+
+
 
 
 @bot.message_handler(content_types=['sticker'])
